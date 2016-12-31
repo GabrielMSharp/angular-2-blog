@@ -1,0 +1,17 @@
+<div *ngIf="posts">
+    <div *ngFor="let post of posts">
+        <div class="card">
+            <div class="card-header" [routerLink]="['/post', post.id]">{{post.title}}</div>
+            <div class="card-block">{{post.author}}</div>
+            <div class="card-block">
+                <p class="card-text">{{post.body}}</p>
+            </div>
+            <div class="card-block">
+                {{post.comments.total}} {{post.comments.total === 1 ? 'Comment': 'Comments'}}
+                <div>
+                    <button class="btn btn-link btn-xs pl-0" [routerLink]="['/post', post.id]">View Comments</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

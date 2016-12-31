@@ -1,0 +1,16 @@
+<div *ngIf="post">
+        <div class="card">
+            <div class="card-header">{{post.title}}</div>
+            <div class="card-block">{{post.author}}</div>
+            <div class="card-block">
+                <p class="card-text">{{post.body}}</p>
+            </div>
+            <div class="card-block">{{post.comments.total}} comments</div>
+            <div class="card-block">
+                <div class="alert alert-default" *ngFor="let comment of post.comments.comments">
+                    <h5>{{comment.name}}</h5>
+                    <p>{{comment.body}}</p>
+                </div>
+            </div>
+        </div>
+</div>
